@@ -43,8 +43,8 @@
             padding: 20px;
             position: relative;
             z-index: 1;
-            background-color: rgba(0, 0, 0, 0.3); /* transparent */
-            backdrop-filter: blur(6px); /* glass effect */
+            background-color: rgba(0, 0, 0, 0.3); 
+            backdrop-filter: blur(6px);
             border-radius: 12px;
         }
 
@@ -128,7 +128,7 @@
         <h2>Installation</h2>
         <div class="code-block">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-local library = loadstring(game:HttpGet("URL"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vxvV4/Zen-Documentation-/refs/heads/main/Zen.lua"))()
 library:Init()
         </div>
 
@@ -206,7 +206,6 @@ end)
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 local folder = window:AddFolder("Folder Name")
 
--- All components work inside folders
 folder:Button("Folder Button", function()
     print("folder button")
 end)
@@ -244,8 +243,8 @@ library:Init()
         <h2>Complete Usage</h2>
         <div class="code-block">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
--- Load and initialize the library
-local library = loadstring(game:HttpGet("https://pastefy.app/iE4OmYq3/raw"))()
+-- Load library 
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vxvV4/Zen-Documentation-/refs/heads/main/Zen.lua"))()
 
 -- Create main window
 local window = library:CreateWindow("Zen")
