@@ -245,10 +245,10 @@ library:Init()
         <div class="code-block">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 -- Load and initialize the library
-local library = loadstring(game:HttpGet("URL"))()
+local library = loadstring(game:HttpGet("https://pastefy.app/iE4OmYq3/raw"))()
 
 -- Create main window
-local window = library:CreateWindow("My GUI")
+local window = library:CreateWindow("Zen")
 
 -- Add a simple button
 window:Button("Test", function()
@@ -285,34 +285,39 @@ window:Slider("Value", 0, 100, false, function(value)
 end)
 
 -- Create a folder for organization
-local folder = window:AddFolder("Advanced")
+local folder = window:AddFolder("Folder")
 
 -- Add all component types to the folder
 folder:Button("Folder Button", function()
     print("folder button clicked")
 end)
 
-folder:Toggle("Folder Feature", function(enabled)
+folder:Toggle("Folder Toggle", function(enabled)
     print("folder toggle:", enabled)
 end)
 
-folder:Box("Folder Input", function(text)
+folder:Box("Folder 4px Box", function(text)
     print("folder input:", text)
 end)
 
-folder:Keybind("Folder Hotkey", Enum.KeyCode.H, "toggle", function(active)
+folder:Keybind("Folder Keybind", Enum.KeyCode.H, "toggle", function(active)
     print("folder keybind:", active)
 end)
 
-folder:Dropdown("Folder Menu", {"Folder A", "Folder B"}, function(selected)
+folder:Dropdown("Folder Dropdown", {"Folder A", "Folder B"}, function(selected)
     print("folder dropdown:", selected)
 end)
 
-folder:Slider("Folder Range", 10, 90, false, function(value)
+folder:Slider("Folder Slider", 10, 90, false, function(value)
     print("folder slider:", value)
 end)
 
 library:Init()
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <h2>Preview</h2>
+            <img src="https://raw.githubusercontent.com/vxvV4/Zen-Documentation-/main/IMG_20250922_180746.jpg" alt="Zen Library Preview" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
         </div>
 
     </div>
