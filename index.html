@@ -27,12 +27,14 @@
             width: 100%;
             height: 100%;
             z-index: -1;
+            will-change: transform;
         }
 
         .video-background video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            pointer-events: none;
         }
 
         .container {
@@ -203,8 +205,30 @@ end)
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 local folder = window:AddFolder("Folder Name")
-folder:Button("Button in Folder", function()
+
+-- All components work inside folders
+folder:Button("Folder Button", function()
     print("folder button")
+end)
+
+folder:Toggle("Folder Toggle", function(enabled)
+    print("Folder toggle:", enabled)
+end)
+
+folder:Box("Folder TextBox", function(text)
+    print("Folder text:", text)
+end)
+
+folder:Keybind("Folder Keybind", Enum.KeyCode.G, "hold", function(active)
+    print("Folder keybind:", active)
+end)
+
+folder:Dropdown("Folder Dropdown", {"Folder Option 1", "Folder Option 2"}, function(selected)
+    print("Folder selected:", selected)
+end)
+
+folder:Slider("Folder Slider", 1, 50, false, function(value)
+    print("Folder value:", value)
 end)
             </div>
         </div>
@@ -262,8 +286,30 @@ end)
 
 -- Create a folder for organization
 local folder = window:AddFolder("Advanced")
+
+-- Add all component types to the folder
 folder:Button("Folder Button", function()
     print("folder button clicked")
+end)
+
+folder:Toggle("Folder Feature", function(enabled)
+    print("folder toggle:", enabled)
+end)
+
+folder:Box("Folder Input", function(text)
+    print("folder input:", text)
+end)
+
+folder:Keybind("Folder Hotkey", Enum.KeyCode.H, "toggle", function(active)
+    print("folder keybind:", active)
+end)
+
+folder:Dropdown("Folder Menu", {"Folder A", "Folder B"}, function(selected)
+    print("folder dropdown:", selected)
+end)
+
+folder:Slider("Folder Range", 10, 90, false, function(value)
+    print("folder slider:", value)
 end)
 
 library:Init()
